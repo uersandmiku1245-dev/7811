@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tri Ân Thầy Cô - Lớp 7/1</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg,#d5f1ff,#fff1f5,#fff5d9);
+    overflow-x: hidden;
+    color: #174b9b;
+}
+
+.hero {
+    min-height: 600px;
+    text-align: center;
+    padding: 55px 15px;
+    position: relative;
+    overflow: hidden;
+    background:
+    radial-gradient(circle at 10% 20%,#fff 2px,transparent 4px),
+    linear-gradient(135deg,#b7e6ff,#f9dff0,#fff1b9);
+}
+
+.school {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #17449a;
+    margin-bottom: 25px;
+}
+
+.hero h3 {
+    font-family: 'Pacifico', cursive;
+    color: #1872ed;
+    font-size: clamp(35px,7vw,65px);
+    animation: appear 1.5s ease;
+}
+
+.hero h1 {
+    font-family: 'Pacifico', cursive;
+    color: #ef3150;
+    font-size: clamp(38px,8vw,75px);
+    text-shadow: 3px 4px white;
+    animation: appear 2s ease;
+}
+
+.date {
+    font-family: 'Playfair Display',serif;
+    font-size: clamp(75px,15vw,135px);
+    font-weight: bold;
+    color: #ff345c;
+    text-shadow: 4px 5px #fff;
+    margin: 5px;
+    animation: bounce 2s infinite;
+}
+
+.hero p {
+    font-size: 22px;
+    color: #124a9b;
+    font-weight: bold;
+}
+
+.decor {
+    position: absolute;
+    font-size: 65px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.flower1 {top: 30px;left: 20px;}
+.flower2 {top: 30px;right: 20px;}
+.flower3 {bottom: 20px;left: 8%;}
+.flower4 {bottom: 20px;right: 8%;}
+
+.section {
+    padding: 60px 7%;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Pacifico',cursive;
+    color: #ed3155;
+    font-size: clamp(28px,5vw,42px);
+    margin-bottom: 30px;
+}
+
+.letter {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 25px;
+    background: rgba(255,255,255,.9);
+    border: 4px double #f3b34c;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px #b8d9ed;
+    line-height: 2;
+    font-size: 19px;
+}
+
+.letter h2 {
+    color: #e92e52;
+    font-family: 'Pacifico',cursive;
+    margin-bottom: 20px;
+}
+
+.letter p {
+    margin-bottom: 12px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+    gap: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.photo {
+    background: white;
+    padding: 12px;
+    border-radius: 15px;
+    box-shadow: 0 7px 20px #a8c7df;
+    transition: .4s;
+}
+
+.photo:hover {
+    transform: translateY(-10px) rotate(-1deg);
+}
+
+.photo img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.photo h3 {
+    color: #ed3155;
+    margin: 15px 0 5px;
+}
+
+.wishes {
+    background: linear-gradient(120deg,#fda9c4,#ffd3a5);
+    padding: 65px 15px;
+    text-align: center;
+}
+
+.wishes h2 {
+    font-family: 'Pacifico',cursive;
+    font-size: 35px;
+    color: #c9234b;
+}
+
+.wishes p {
+    max-width: 750px;
+    margin: 20px auto;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #7a1640;
+}
+
+button {
+    padding: 16px 32px;
+    border: none;
+    border-radius: 40px;
+    background: linear-gradient(45deg,#ff3265,#ff8b9f);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #e99ab1;
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+footer {
+    padding: 30px;
+    text-align: center;
+    background: #164b99;
+    color: white;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 25px;
+    pointer-events: none;
+    animation: fly 4s linear forwards;
+    z-index: 10;
+}
+
+@keyframes appear {
+    from {opacity:0;transform:translateY(40px);}
+    to {opacity:1;transform:translateY(0);}
+}
+
+@keyframes bounce {
+    0%,100% {transform:scale(1);}
+    50% {transform:scale(1.08);}
+}
+
+@keyframes float {
+    0%,100% {transform:translateY(0);}
+    50% {transform:translateY(-20px);}
+}
+
+@keyframes fly {
+    to {
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:600px) {
+    .decor {font-size:35px;}
+    .section {padding:40px 15px;}
+    .letter {padding:25px 15px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PHẦN ĐẦU -->
+<header class="hero">
+
+<div class="decor flower1">🌻</div>
+<div class="decor flower2">🌹</div>
+<div class="decor flower3">🌸</div>
+<div class="decor flower4">🌻</div>
+
+<div class="school">
+🏫 TRƯỜNG TIỂU HỌC VÀ THCS PHƯỚC THỂ
+</div>
+
+<h3>Chúc mừng</h3>
+<h1>Ngày Nhà giáo Việt Nam</h1>
+
+<div class="date">20.11</div>
+
+<p>💖 Tập thể lớp 7/1 kính tặng thầy cô 💖</p>
+
+</header>
+
+<!-- LỜI TRI ÂN -->
+<section class="section">
+
+<h2 class="title">🌷 Lời tri ân 🌷</h2>
+
+<div class="letter">
+<h2>Kính gửi quý thầy cô!</h2>
+
+<p>
+Tháng 11 lại về mang theo những yêu thương
+và lòng biết ơn sâu sắc dành cho những người
+đã tận tụy dìu dắt chúng em.
+</p>
+
+<p>
+Thầy cô không chỉ dạy chúng em kiến thức
+mà còn dạy cách làm người, cách ước mơ
+và vững bước trên con đường tương lai.
+</p>
+
+<p>
+Nhân ngày 20/11, tập thể lớp 7/1 xin kính chúc
+thầy cô luôn mạnh khỏe, hạnh phúc và thành công.
+</p>
+
+<h2>❤️ Chúng em yêu quý thầy cô! ❤️</h2>
+</div>
+
+</section>
+
+<!-- ALBUM ẢNH -->
+<section class="section">
+
+<h2 class="title">📸 Album kỷ niệm lớp 7/1</h2>
+
+<div class="gallery">
+
+<div class="photo">
+<img src="anh1.jpg" alt="Ảnh thầy cô">
+<h3>🌹 Thầy cô kính yêu</h3>
+</div>
+
+<div class="photo">
+<img src="anh2.jpg" alt="Ảnh lớp học">
+<h3>💖 Lớp học thân thương</h3>
+</div>
+
+<div class="photo">
+<img src="anh3.jpg" alt="Ảnh hoạt động">
+<h3>🌻 Những kỷ niệm đẹp</h3>
+</div>
+
+<div class="photo">
+<img src="anh4.jpg" alt="Ảnh tập thể">
+<h3>🌷 Thanh xuân học trò</h3>
+</div>
+
+</div>
+</section>
+
+<!-- LỜI CHÚC -->
+<section class="wishes">
+
+<h2>💌 Một lời chúc - Ngàn yêu thương</h2>
+
+<p>
+Cảm ơn thầy cô vì đã luôn kiên nhẫn,
+bao dung và truyền cảm hứng cho chúng em.
+Mỗi bài giảng là một món quà,
+mỗi lời dạy là hành trang quý giá.
+</p>
+
+<button onclick="sendLove()">
+💗 Gửi lời yêu thương 💗
+</button>
+
+<h2 id="thanks" style="margin-top:25px;"></h2>
+
+</section>
+
+<footer>
+🌻 TÔN SƯ TRỌNG ĐẠO - UỐNG NƯỚC NHỚ NGUỒN 🌻
+<br>
+Tập thể lớp 7/1 kính chúc thầy cô 20/11 vui vẻ!
+<br>
+❤️ Mãi mãi biết ơn thầy cô ❤️
+</footer>
+
+<script>
+function sendLove() {
+    document.getElementById("thanks").innerHTML =
+    "🎉 Chúc thầy cô luôn hạnh phúc và thành công! ❤️";
+
+    for(let i=0;i<35;i++) {
+        let heart=document.createElement("div");
+        heart.className="heart";
+        heart.innerHTML=["❤️","💖","💕","🌸","🌻"][Math.floor(Math.random()*5)];
+        heart.style.left=Math.random()*100+"vw";
+        heart.style.animationDuration=(2+Math.random()*3)+"s";
+        document.body.appendChild(heart);
+
+        setTimeout(()=>heart.remove(),5000);
+    }
+}
+</script>
+
+</body>
+</html>
